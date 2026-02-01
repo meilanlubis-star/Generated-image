@@ -1,0 +1,23 @@
+"homepage": "https://meilanlubis-star.github.io/Generated-image/",
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
+  ...
+}
+
+### 3. Jalankan Deployment
+Setelah setting selesai, jalankan perintah ini di terminal laptop Anda:
+
+```bash
+npm run deploy
+
+Perintah ini akan otomatis mem-build proyek Anda dan mengirimkan isi folder `dist` (yang berisi `index.html`) ke branch `gh-pages` di GitHub.
+
+### 4. Atur Source di GitHub Settings
+1. Buka repositori Anda di GitHub.
+2. Pergi ke **Settings** > **Pages**.
+3. Di bagian **Build and deployment** > **Branch**, pilih branch `gh-pages` (bukan `main`) dan folder `/ (root)`.
+4. Tunggu 1-2 menit, lalu segarkan (refresh) URL Anda.
+
+**Mengapa 404 muncul?**
+GitHub Pages mencari file bernama `index.html`. Di proyek React Anda, file ini biasanya berada di dalam folder `public` atau root saat pengembangan, tetapi setelah di-build, ia akan pindah ke folder `dist` atau `build`. GitHub hanya akan menampilkan situs jika file tersebut berada di lokasi yang benar sesuai pengaturan branch Anda di Canvas.
